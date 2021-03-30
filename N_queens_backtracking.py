@@ -79,10 +79,28 @@ def solve(N,board,collumn):
     backtracking += 1
     # print('backtracking')
     return False
-                
-N = 18
+
+
+def print_board(board):
+    """
+    prints the board
+    :param bo: 2d array 
+    :return: None
+    """
+    board = board.astype(int)
+    print()
+    for i in range(len(board)):
+        for j in range(len(board)):
+            if j == len(board)-1:
+                print(board[i,j], end="\n")
+            else:
+                print(str(board[i,j]) + " ", end="")
+             
+N = 8
 board = np.zeros((N,N))
 
 solve(N,board,collumn = 0)
+print()
 print('backtracking = ',backtracking)
-print(board)
+print_board(board)
+# print(board)
